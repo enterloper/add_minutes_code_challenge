@@ -1,0 +1,52 @@
+/**** MAIN ****/
+.time-selection {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.time-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+.hour-minute-block {
+    display: flex;
+    justify-content: center;
+}
+
+.time-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-input-colon {
+    font-size: 28px;
+    padding: 4px 2px;
+}
+
+.time-input label {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.time-input input {
+    padding: 8px;
+    font-size: 24px;    
+    border-radius: 4px;
+}
+
+/**** FOOTER ****/
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-information {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    width: 100vw;
+}
