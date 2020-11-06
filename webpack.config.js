@@ -4,53 +4,56 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
-    "mode": "development",
-    "entry": path.resolve(__dirname, "./src/index.js"),
-    "output": {
-        "path": path.resolve(__dirname, './dist'),
-        "filename": "[name].bundle.js"
+    mode: "development",
+    entry: path.resolve(__dirname, "./src/index.js"),
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js"
     },
-    "devtool": "source-map",
-    "module": {
-        "rules": [
+    devtool: "source-map",
+    module: {
+        rules: [
             {
-                "enforce": "pre",
-                "test": /\.js$/,
-                "exclude": /node_modules/,
-                "loader": "eslint-loader",
-                "options": {
-                  "emitWarning": true,
-                  "failOnError": false,
-                  "failOnWarning": false
+                enforce: "pre",
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+                options: {
+                  emitWarning: true,
+                  failOnError: false,
+                  failOnWarning: false
                 }
             },
             {
-                "test": /\.(js|jsx)$/,
-                "exclude": /node_modules/,
-                "use": ["babel-loader"]
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"]
             },
             {
-                "test": /\.css$/,
-                "use": [
+                test: /\.css$/,
+                use: [
                     "style-loader",
                     "css-loader"
                 ]
             },
             {
-                "test": /\.html$/,
-                "use": [
+                test: /\.html$/,
+                use: [
                     {
-                        "loader": "html-loader"
+                        loader: "html-loader"
                     }
                 ]
             }
         ]
     },
-    "plugins": [
+    plugins: [
         new HtmlWebPackPlugin({
             template: path.resolve(__dirname, "./src/index.html"),
             filename: "index.html"
         }),
         new CleanWebpackPlugin() 
-    ]
+    ],
+    resolve: {
+        extensions: [".js", ".jsx"]
+    }
 };
