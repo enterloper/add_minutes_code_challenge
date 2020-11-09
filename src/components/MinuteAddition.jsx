@@ -15,11 +15,14 @@ const StyledInput = styled.input`
     padding: 8px;
     font-size: 24px;    
     border-radius: 4px;
+    border: 1px solid lightgray;
+    height: 36px;
 `;
 
 const MinuteAddition = ({initialValue, label, min, name}) => {
     const [timeValue, setTimeValue] = useState(initialValue);
     const handleTimeChange = ({target: {value}}) => {
+        console.log(value);
         setTimeValue(value);
     }
     return (

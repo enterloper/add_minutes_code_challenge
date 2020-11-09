@@ -12,8 +12,8 @@ const StyledFooter = styled.footer`
 
 const Footer = () => (
     <StyledFooter>
-        <p>This was created for a code assessment by Richard Boothe for AffiniPay</p>
-        <p>In consdiration of the requirements of this challenge, modern libraries were not considered as traditional HTML and JavaScript would suffice.</p>
+        <p>This was created for a code assessment for Richard Boothe by AffiniPay</p>
+        <p>The interface was designed with React and tested with React Testing Library.</p>
     </StyledFooter>
 );
 

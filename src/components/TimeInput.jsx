@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+const StyledTimeInputContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
 
 const StyledTimeInput = styled.input`
     &[type=time] {
@@ -44,11 +49,23 @@ const StyledTimeInput = styled.input`
     }
 `;
 
-const TimeInput = ({ handleChange }) => (
-    <StyledTimeInput 
-        onChange={handleChange}
-        type="time"
-    />
-);
 
+const StyledLabel = styled.label`
+    margin-top: 4px;
+    font-size: 12px;
+`;
+
+
+const TimeInput = ({ handleChange, name, time }) => {
+    return (
+        <StyledTimeInputContainer>
+            <StyledTimeInput 
+                name={name}
+                type="time"
+                value="14:00"
+            />
+            <StyledLabel for={name}>Time to Modify</StyledLabel>
+        </StyledTimeInputContainer>
+    );
+}
 export default TimeInput;
