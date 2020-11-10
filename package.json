@@ -8,19 +8,11 @@
     "build": "webpack",
     "start": "webpack serve --mode development --open --hot"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/enterloper/affinipay_code_challenge.git"
-  },
   "keywords": [
     "code-challenge"
   ],
   "author": "Richard Boothe",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/enterloper/affinipay_code_challenge/issues"
-  },
-  "homepage": "https://github.com/enterloper/affinipay_code_challenge#readme",
   "dependencies": {
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
