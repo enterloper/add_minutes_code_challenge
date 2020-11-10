@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import MinuteAddition from './MinuteAddition';
 import TimeInput from './TimeInput';
-// import addMinutes from '../helpers/addMinutes';
-// console.log('eat my ass', addMinutes('9:00 PM', 600));
+import addMinutes, { convertFrom24To12 } from '../helpers/addMinutes';
 
 const TimeSelectionContainer = styled.div`
     display: flex;
@@ -34,18 +33,38 @@ const ModifiedTimeDisplay = styled.div`
     padding: 4px;
 `;
 
+const deriveHoursFromTimeElement = time => {
+    const hours = Number(time.substring(0, 2));
+    const finalMinutes = time.substring(3, 5);
+    return {
+        ...convertFrom24To12(hours),
+        finalMinutes
+    };
+};
+
 const TimeSelection = () => {
-    const [selectedTime, setSelectedTime] = useState('12:00');
+    const [selectedTime, setSelectedTime] = useState('00:00');
     const [minutesToAdd, setMinutesToAdd] = useState(0);
+    const [timePlusMinutes, setTimePlusMinutes] = useState('12:00 AM');
 
     const handleTimeChange = ({target: { value }}) => {
         setSelectedTime(value);
     };
 
     const handleMinuteInput = ({target: { value }}) => {
-        console.log('eat me fat boy', value);
         setMinutesToAdd(Number(value));
     };
+
+    useEffect(() => {
+        const {
+            finalHours, 
+            finalMeridiem, 
+            finalMinutes
+        } = deriveHoursFromTimeElement(selectedTime);
+        const selectedTimeString = `${finalHours}:${finalMinutes} ${finalMeridiem}`;
+        const updatedTime = addMinutes(selectedTimeString, minutesToAdd);
+        setTimePlusMinutes(updatedTime);
+    }, [selectedTime, minutesToAdd]);
 
     return (
         <main role="main">
@@ -73,7 +92,7 @@ const TimeSelection = () => {
             </TimeSelectionContainer>
             <ModifiedTimeContainer>
                 <ModifiedTimeDisplay>
-                    12:00
+                    {timePlusMinutes}
                 </ModifiedTimeDisplay>
             </ModifiedTimeContainer>
         </main>

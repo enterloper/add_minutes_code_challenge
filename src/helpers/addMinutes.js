@@ -1,4 +1,4 @@
- const breakdownTimeString = timeString => {
+ export const breakdownTimeString = timeString => {
     const timeStringLength = timeString.length;
     const meridiem = timeString.substring(timeStringLength - 2);
     const hour = timeStringLength === 8 ? timeString.substring(0, 2) : timeString.substring(0, 1);
@@ -7,7 +7,7 @@
     return { hour, minutes, meridiem };
 };
 
-const convertFrom12To24 = (hours, meridiem) => {
+export const convertFrom12To24 = (hours, meridiem) => {
     const intHours = Number(hours);
     if (intHours === 12) {
         if (meridiem === 'AM') return 0;
@@ -18,13 +18,14 @@ const convertFrom12To24 = (hours, meridiem) => {
     return intHours;
 };
 
- const convertFrom24To12 = hours => {
+export const convertFrom24To12 = hours => {
     if (hours === 0) return { finalHours: '12', finalMeridiem: 'AM' };
     if (hours < 12) return { finalHours: `${hours}`, finalMeridiem: 'AM' };
     if (hours === 12) return { finalHours: `${hours}`, finalMeridiem: 'PM'};
     return { finalHours: `${hours - 12}`, finalMeridiem: 'PM' };
 };
-const setMinutes = (originalMinutes, minutesToAdd) => {
+
+export const setMinutes = (originalMinutes, minutesToAdd) => {
     const intMinutes = Number(originalMinutes);
     const totalMinutes = intMinutes + minutesToAdd;
     const hoursToAdd = Math.floor(totalMinutes / 60);
@@ -33,7 +34,7 @@ const setMinutes = (originalMinutes, minutesToAdd) => {
     return { hoursToAdd, finalMinutes };
 }
 
-const setFinalHours = (militaryHours, hoursToAdd) => {
+export const setFinalHours = (militaryHours, hoursToAdd) => {
     if (!hoursToAdd) return militaryHours;
 
     const totalHours = militaryHours + hoursToAdd;
