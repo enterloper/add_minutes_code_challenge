@@ -10,6 +10,7 @@ const StyledMinuteAddition = styled.div`
 const StyledLabel = styled.label`
     margin-top: 4px;
     font-size: 12px;
+    font-family: "Avenir Next", "Helvetica Neue", Arial, sans serif;
 `;
 
 const StyledInput = styled.input`
@@ -18,6 +19,7 @@ const StyledInput = styled.input`
     border-radius: 4px;
     border: 1px solid lightgray;
     height: 36px;
+    font-family: "Avenir Next", "Helvetica Neue", Arial, sans serif;
 `;
 
 const MinuteAddition = ({label, min, minutesToAdd, name, handleChange}) => {

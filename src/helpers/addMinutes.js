@@ -57,33 +57,3 @@ const addMinutes = (timeString = "12:00 AM", minutesToAdd = 0) => {
 }
 
 export default addMinutes;
-// for(let i = 1; i < 13; i++) {
-//     for(let j = 0; j <= 1; j++) {
-//         j === 0 ? console.log('AM:', convertFrom12To24(i, 'AM'))
-//             : console.log('PM:', convertFrom12To24(i, 'PM'));
-//     }
-// }
-
-// for(let militaryHrs = 0; militaryHrs < 24; militaryHrs++) {
-//     for (let addedHours = 0; addedHours < 24; addedHours++) {
-//         console.log({militaryHrs, addedHours, output: setFinalHours(militaryHrs, addedHours)});
-//     }
-// }
-
-// for(let hours = 0; hours < 24; hours++) {
-//     console.log({hours: hours, output: convertFrom24To12(hours)});
-// }
-
-// console.log(addMinutes('9:00 PM', 600)); //=> 7:00 AM
-// console.log(addMinutes('9:00 PM', 2880)); // => 9:00 AM
-// console.log(addMinutes('9:00 PM', 4320)); // => 9:00 PM
-// console.log(addMinutes('9:00 PM', 5760)); // => 9:00 PM
-// console.log(addMinutes('9:13 PM', 0)) //=> 9:13 PM
-// console.log(addMinutes('9:13 PM', 60)) //=> 10:13 PM
-// console.log(addMinutes('9:13 PM', 600)) //=> 7:13 AM
-// console.log(addMinutes('9:13 PM', 120)) //=> 11:13 PM
-// console.log(addMinutes('9:13 PM', 150)) //=> 11:43 PM
-// console.log(addMinutes('9:13 PM', 190)) //=> 12:23 AM
-// console.log(addMinutes('9:13 PM', 1900)) //=> 4:53 PM
-// console.log(addMinutes('9:00 PM', 3600)) //=> 9:00 AM
-// console.log(addMinutes('9:00 PM', 1440)) //=> 9:00 PM

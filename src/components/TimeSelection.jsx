@@ -8,6 +8,7 @@ const TimeSelectionContainer = styled.div`
     display: flex;
     max-width: 800px;
     margin: 0 auto;
+    padding: 40px;
 `;
 
 const TimeInputContainer = styled.div`
@@ -28,9 +29,15 @@ const ModifiedTimeContainer = styled.div`
 `;
 
 const ModifiedTimeDisplay = styled.div`
-    border: 1px solid black;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 4px;
+    font-size: 24px;
+    font-family: "Avenir Next", "Helvetica Neue", Arial, sans serif;
+    > h3 {
+        margin-top: 0;
+    }
 `;
 
 const deriveHoursFromTimeElement = time => {
@@ -92,6 +99,7 @@ const TimeSelection = () => {
             </TimeSelectionContainer>
             <ModifiedTimeContainer>
                 <ModifiedTimeDisplay>
+                    <h3>Updated Time</h3>
                     {timePlusMinutes}
                 </ModifiedTimeDisplay>
             </ModifiedTimeContainer>

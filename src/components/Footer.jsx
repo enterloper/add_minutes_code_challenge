@@ -5,6 +5,8 @@ const StyledFooter = styled.footer`
     position: absolute;
     bottom: 0;
     width: 100vw;
+    font-family: "Avenir Next", "Helvetica Neue", Arial, sans serif;
+    font-size: 10px;
 `;
 
 const StyledFooterContent = styled.div`
@@ -13,9 +15,8 @@ const StyledFooterContent = styled.div`
     border-top: 1px solid lightgray;
     display: flex;
     flex-direction: column;
-    align-items: center;
     > p {
-        margin: 8px 24px;
+        margin: 4px 24px;
         &:first-of-type {
             margin-top: 20px;
         }
