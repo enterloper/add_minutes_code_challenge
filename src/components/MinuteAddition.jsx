@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { func, number, string } from 'prop-types';
 
 const StyledMinuteAddition = styled.div`
     display: flex;
@@ -19,25 +20,28 @@ const StyledInput = styled.input`
     height: 36px;
 `;
 
-const MinuteAddition = ({initialValue, label, min, name}) => {
-    const [timeValue, setTimeValue] = useState(initialValue);
-    const handleTimeChange = ({target: {value}}) => {
-        console.log(value);
-        setTimeValue(value);
-    }
+const MinuteAddition = ({label, min, minutesToAdd, name, handleChange}) => {
     return (
         <StyledMinuteAddition>
             <StyledInput 
                 id={name}
                 type="number" 
                 name={name} 
-                value={timeValue}
+                value={minutesToAdd}
                 min={min} 
-                onChange={handleTimeChange}
+                onChange={handleChange}
             />
-            <StyledLabel for={name}>{label}</StyledLabel>
+            <StyledLabel htmlFor={name}>{label}</StyledLabel>
         </StyledMinuteAddition>
     );
 }
+
+MinuteAddition.propTypes = {
+    name: string.isRequired,
+    label: string.isRequired,
+    minutesToAdd: number.isRequired,
+    min: number,
+    handleChange: func.isRequired
+};
 
 export default MinuteAddition;

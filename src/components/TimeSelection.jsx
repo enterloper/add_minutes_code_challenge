@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import MinuteAddition from './MinuteAddition';
 import TimeInput from './TimeInput';
+// import addMinutes from '../helpers/addMinutes';
+// console.log('eat my ass', addMinutes('9:00 PM', 600));
 
 const TimeSelectionContainer = styled.div`
     display: flex;
@@ -22,7 +24,6 @@ const HourMinuteBlock = styled.div`
 `;
 
 const ModifiedTimeContainer = styled.div`
-    background-color: red;
     display: flex;
     justify-content: center;
 `;
@@ -35,10 +36,16 @@ const ModifiedTimeDisplay = styled.div`
 
 const TimeSelection = () => {
     const [selectedTime, setSelectedTime] = useState('12:00');
-    const handleTimeChange = (event) => {
-        console.log(event.target.value);
-        setSelectedTime(event.target.value);
-    }
+    const [minutesToAdd, setMinutesToAdd] = useState(0);
+
+    const handleTimeChange = ({target: { value }}) => {
+        setSelectedTime(value);
+    };
+
+    const handleMinuteInput = ({target: { value }}) => {
+        console.log('eat me fat boy', value);
+        setMinutesToAdd(Number(value));
+    };
 
     return (
         <main role="main">
@@ -48,6 +55,7 @@ const TimeSelection = () => {
                         <TimeInput
                             name="timeToChange"
                             handleChange={handleTimeChange} 
+                            time={selectedTime}
                         />
                     </HourMinuteBlock>
                 </TimeInputContainer>
@@ -56,8 +64,9 @@ const TimeSelection = () => {
                         <MinuteAddition
                             name="minutesToAdd"
                             label="Minutes to Add"
-                            initialValue={0}
+                            minutesToAdd={minutesToAdd}
                             min={0} 
+                            handleChange={handleMinuteInput}
                         />
                     </HourMinuteBlock>
                 </TimeInputContainer>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import {func, string} from 'prop-types';
 
 const StyledTimeInputContainer = styled.div`
     display: flex;
@@ -62,10 +63,17 @@ const TimeInput = ({ handleChange, name, time }) => {
             <StyledTimeInput 
                 name={name}
                 type="time"
-                value="14:00"
+                value={time}
+                onChange={handleChange}
             />
-            <StyledLabel for={name}>Time to Modify</StyledLabel>
+            <StyledLabel htmlFor={name}>Time to Modify</StyledLabel>
         </StyledTimeInputContainer>
     );
+}
+
+TimeInput.propTypes = {
+    handleChange: func.isRequired,
+    name: string.isRequired,
+    time: string.isRequired
 }
 export default TimeInput;
