@@ -9,6 +9,11 @@ const TimeSelectionContainer = styled.div`
     max-width: 800px;
     margin: 0 auto;
     padding: 40px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const TimeInputContainer = styled.div`

@@ -48,6 +48,10 @@ const StyledTimeInput = styled.input`
     &[type=time]::-webkit-inner-spin-button {
         display: none;
     }
+
+    @media (max-width: 768px) {
+        margin-right: 66px;
+    }
 `;
 
 
@@ -55,6 +59,9 @@ const StyledLabel = styled.label`
     margin-top: 4px;
     font-size: 12px;
     font-family: "Avenir Next", "Helvetica Neue", Arial, sans serif;
+    @media (max-width: 768px) {
+        margin-bottom: 12px;
+    }
 `;
 
 

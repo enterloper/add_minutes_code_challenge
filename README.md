@@ -13,4 +13,5 @@ Without using any built-in date or time functions, write a function or method th
 To do:
 1. Update to TypeScript
 2. Increase test coverage
+
 ![AffiniPay Code Challenge Preview](./public/affinipay-preview.png)
