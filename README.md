@@ -9,3 +9,8 @@ Without using any built-in date or time functions, write a function or method th
 2. To run tests, type in the terminal: `npm test`
 3. To view the UI (Best experience in Google Chrome), type in the terminal: `npm start`
     - Navigate to [http://localhost:8080/](http://localhost:8080/)
+
+To do:
+1. Update to TypeScript
+2. Increase test coverage
+![AffiniPay Code Challenge Preview](./public/affinipay-preview.png)

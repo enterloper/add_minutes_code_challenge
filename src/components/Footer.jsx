@@ -29,7 +29,7 @@ const StyledFooterContent = styled.div`
 const Footer = () => (
     <StyledFooter>
         <StyledFooterContent>
-            <p>This was created for a code assessment for Richard Boothe by AffiniPay</p>
+            <p>This was created for a code assessment for AffiniPay by <a href="https://github.com/enterloper/affinipay_code_challenge" target="_blank" rel="noreferrer">Richard Boothe</a></p>
             <p>The User Interface was designed with React and the behavior was tested with Jest and Enzyme.</p>
         </StyledFooterContent>
     </StyledFooter>
